@@ -1,11 +1,11 @@
-$liste = document.getElementById("liste");
-$prenom = document.getElementById("prenom");
-$nom = document.getElementById("nom");
-$numero = document.getElementById("numero");
-$ajouter = document.getElementById("ajouter");
-$recherche = document.getElementById("recherche");
-$rechercher = document.getElementById("rechercher");
-$resultats = document.getElementById("resultats");
+var $liste = document.getElementById("liste");
+var $prenom = document.getElementById("prenom");
+var $nom = document.getElementById("nom");
+var $numero = document.getElementById("numero");
+var $ajouter = document.getElementById("ajouter");
+var $recherche = document.getElementById("recherche");
+var $rechercher = document.getElementById("rechercher");
+var $resultats = document.getElementById("resultats");
 
 var contacts = [{
     prenom: "Jesse",
@@ -22,8 +22,8 @@ function texteContact(contact) {
 }
 
 function afficherListe() {
-    elements = "";
-    for (i = 0; i < contacts.length; i++) {
+    var elements = "";
+    for (var i = 0; i < contacts.length; i++) {
         elements += "<li>" + texteContact(contacts[i]) + "</li>";
     }
     $liste.innerHTML = elements;
@@ -39,9 +39,9 @@ function ajouter() {
 }
 
 function rechercher() {
-    recherche = $recherche.value;
-    elements = "";
-    for (i = 0; i < contacts.length; i++) {
+    var recherche = $recherche.value;
+    var elements = "";
+    for (var i = 0; i < contacts.length; i++) {
         if (contacts[i].prenom == recherche || contacts[i].nom == recherche || contacts[i].numero == recherche) {
             elements += "<li>" + texteContact(contacts[i]) + "</li>";
         }
